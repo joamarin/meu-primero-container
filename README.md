@@ -1,6 +1,7 @@
 
 # Minha Primeira Aplicação em Contêineres com Docker
 
+Material de apoio para alunos da disciplina Jornada DevOps. Estudo de caso: Meu primeiro contêiner.
 Este projeto demonstra como criar, executar e compartilhar uma aplicação em contêiner usando Docker.
 
 ---
@@ -19,8 +20,7 @@ Antes de começar, certifique-se de que você tem os seguintes programas instala
 ## Passo a Passo
 
 ### 1. Clonar o Repositório da Aplicação
-Baixe o código da aplicação de exemplo
-Fonte original do código: https://docs.docker.com/get-started/
+Fonte: https://docs.docker.com/get-started/
 ```bash
 git clone https://github.com/docker/getting-started-app.git
 ```
@@ -41,7 +41,7 @@ EXPOSE 3000
 ---
 
 ### 3. Construir a Imagem Docker
-Gere a imagem Docker a partir do `Dockerfile`:
+Gere a imagem Docker a partir das instruções definidas `Dockerfile`:
 ```bash
 docker build -t getting-started .
 ```
@@ -84,7 +84,7 @@ docker login
 ### 8. Enviar a Imagem para o Docker Hub
 Suba a imagem para o Docker Hub:
 ```bash
-docker push jcamar/meu_primeiro_docker:latest
+docker tag <imagem_local> <seu_usuario>/<nome_imagem>:<tag>
 ```
 
 ---
@@ -92,7 +92,7 @@ docker push jcamar/meu_primeiro_docker:latest
 ### 9. Baixar Imagem do Docker Hub
 Colegas podem baixar a imagem com:
 ```bash
-docker pull jcamar/meu_primeiro_docker:latest
+docker push <seu_usuario>/<nome_imagem>:<tag>
 ```
 
 ---
@@ -100,7 +100,7 @@ docker pull jcamar/meu_primeiro_docker:latest
 ### 10. Executar Imagem Baixada
 Depois de baixar, os colegas podem executar a imagem:
 ```bash
-docker run -d -p 8080:80 jcamar/meu_primeiro_docker:latest
+docker run -d -p 8080:80 <seu_usuario>/<nome_da_imagem>:<tag>
 ```
 
 ---
@@ -112,9 +112,5 @@ docker save -o getting_started.tar getting-started:latest
 ```
 
 ---
-
-## Finalização
-
-Siga estas etapas para preparar, compartilhar e executar sua aplicação em contêiner. Este projeto abrange conceitos fundamentais do Docker, incluindo a criação de imagens, execução de contêineres e compartilhamento de aplicações.
 
 Para mais informações, consulte a [Documentação do Docker](https://docs.docker.com/get-started/).
